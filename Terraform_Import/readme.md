@@ -9,10 +9,8 @@ Bring the infrastructure under Terraform management
 The following Azure resources already exist:
 
 Resource Groups 
-Virtual Network
-Subnet
-Network Interface (NIC)
-Virtual Machine
-Managed Disk
+storage account
+virtual network 
+ACR
 
 ⚠️ These resources must not be recreated or modified.
