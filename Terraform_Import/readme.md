@@ -1,30 +1,112 @@
-🎯 Problem Statement
+Terraform Import Lab – Azure (Hands-On)
 
-You have joined a project where Azure infrastructure already exists and is running in production.
-The resources were created manually using the Azure Portal and now the team wants to:
-Bring the infrastructure under Terraform management
+## 🎯 Objective
 
-🏗 Existing Infrastructure (Already Created)
+This lab demonstrates how to bring existing Azure resources under Terraform management using terraform import, without recreating or modifying them.
+This is a real-world scenario commonly asked in DevOps / Cloud interviews.
 
-The following Azure resources already exist:
+## 🏗 Existing Azure Resources (Already Created)
 
-Resource Group | virtual network | ACR
-
-⚠️ These resources must not be recreated or modified.
-
-
-Step 1 : Login to Azure portal and verify the resources exsitance. 
-
-<img width="1711" height="493" alt="image" src="https://github.com/user-attachments/assets/0ca0952a-36f0-49b2-8c61-c6caa1b28e77" />
-
-<img width="1712" height="517" alt="image" src="https://github.com/user-attachments/assets/74aa8196-e86b-4431-800f-db81954c8fd4" />
-
-step 2 : Create a folder structure for terraform configuration files
-
-<img width="452" height="215" alt="image" src="https://github.com/user-attachments/assets/3cac0792-0f14-4ab1-970e-51161b7f343e" />
-
-step 3 : 
+| Resource Type | Resource Name |
+|--------------|---------------|
+| Resource Group | AKS |
+| Azure Container Registry (ACR) | acrdemo2101 |
+| Virtual Network (VNet) | vnet-aks |
 
 
+⚠️ Important:
+These resources must NOT be recreated or changed by Terraform.
 
+## 📁 Repository Structure
+
+terraform-import-azure/
+│
+├── main.tf
+├── rg.tf
+├── acr.tf
+├── vnet.tf
+├── .gitignore
+└── README.md
+
+## 🔧 Prerequisites
+
+Ensure the following are installed and configured:
+
+Azure CLI (az)
+Terraform >= 1.5
+Azure subscription access
+VS Code (recommended)
+
+Login to Azure:
+
+az login
+az account set --subscription <subscription-id>
+
+🔹 Step 1: Provider Configuration (main.tf)
+
+🔹 Step 2: Define Resource Blocks (NO values yet)
+Resource Group (rg.tf)
+resource "azurerm_resource_group" "rg" {
+  name     = "AKS"
+  location = "East US"
+}
+
+Azure Container Registry (acr.tf)
+resource "azurerm_container_registry" "acr" {
+  name                = "acrdemo2101"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  sku                 = "Basic"
+}
+
+Virtual Network (vnet.tf)
+resource "azurerm_virtual_network" "vnet" {
+  name                = "vnet-aks"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  address_space       = ["10.0.0.0/16"]
+}
+
+
+👉 These blocks do not create anything yet.
+They are required so Terraform knows what to map imported resources to.
+
+🔹 Step 3: Initialize Terraform
+Execite terraform init
+
+🔹 Step 4: Import Existing Resources
+
+Command : terraform import 
+
+1️⃣ Import Resource Group
+terraform import azurerm_resource_group.rg /subscriptions/<subscription-id>/resourceGroups/AKS
+
+2️⃣ Import Azure Container Registry
+terraform import azurerm_container_registry.acr /subscriptions/<subscription-id>/resourceGroups/AKS/providers/Microsoft.ContainerRegistry/registries/acrdemo2101
+
+3️⃣ Import Virtual Network
+terraform import azurerm_virtual_network.vnet /subscriptions/<subscription-id>/resourceGroups/AKS/providers/Microsoft.Network/virtualNetworks/vnet-aks
+
+🔹 Step 5: Verify Imported State
+terraform state list
+
+Output:
+
+azurerm_resource_group.rg
+azurerm_container_registry.acr
+azurerm_virtual_network.vnet
+
+🔹 Step 6: Align Configuration with Azure 
+
+Run: terraform plan
+
+⚠️ If Terraform shows changes, update .tf files to match the actual Azure configuration.
+
+🔹 Step 7: Validate (Optional but Recommended)
+terraform validate
+terraform fmt
+
+⭐ If You Found This Useful
+
+Star ⭐ the repo
 
