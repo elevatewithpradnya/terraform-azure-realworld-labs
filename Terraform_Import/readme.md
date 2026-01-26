@@ -46,27 +46,8 @@ az account set --subscription <subscription-id>
 
 🔹 Step 2: Define Resource Blocks (NO values yet)
 Resource Group (rg.tf)
-resource "azurerm_resource_group" "rg" {
-  name     = "AKS"
-  location = "East US"
-}
-
 Azure Container Registry (acr.tf)
-resource "azurerm_container_registry" "acr" {
-  name                = "acrdemo2101"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  sku                 = "Basic"
-}
-
 Virtual Network (vnet.tf)
-resource "azurerm_virtual_network" "vnet" {
-  name                = "vnet-aks"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  address_space       = ["10.0.0.0/16"]
-}
-
 
 👉 These blocks do not create anything yet.
 They are required so Terraform knows what to map imported resources to.
