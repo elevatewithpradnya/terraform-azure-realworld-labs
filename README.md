@@ -25,8 +25,6 @@ This repository is built around **how Terraform is actually used in live environ
 
 ## 🚀 What This Repository Covers
 
-## 🚀 What This Repository Covers
-
 | Topic | Description | LinkedIn Post |
 |------|-------------|---------------|
 | Terraform Remote State & Locking | Configuring and managing remote state using Azure Storage with state locking to prevent concurrent changes | _Coming soon_ |
