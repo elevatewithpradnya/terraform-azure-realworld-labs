@@ -24,23 +24,23 @@ This repository is built around **how Terraform is actually used in live environ
 ---
 
 ## 🚀 What This Repository Covers
+## 🚀 What This Repository Covers
 
-- 🔹 Adopting **existing Azure resources** using:
-  - `terraform import`
-  - Terraform `import` blocks (v1.5+)
-  - `aztfexport`
-- 🔹 Aligning Terraform **state with reality**
-- 🔹 Detecting and managing **configuration drift**
-- 🔹 Designing **modular and reusable Terraform architectures**
-- 🔹 Managing **multiple environments** (dev / stage / prod)
-- 🔹 Applying **production-safe change strategies**
-- 🔹 Using **remote state** with Azure Storage
-- 🔹 Integrating Terraform with **CI/CD pipelines**
-- 🔹 Azure best practices for:
-  - Networking
-  - Identity & Access Management
-  - Security & Governance
-  - Resource lifecycle control
+| Area | Coverage |
+|-----|---------|
+| Terraform Import | `terraform import`, import blocks (Terraform ≥1.5), and `aztfexport` for adopting existing Azure resources |
+| Brownfield Adoption | Safely bringing live Azure infrastructure under Terraform management |
+| State Management | Remote state using Azure Storage, state alignment, and safe state handling |
+| Drift Detection | Identifying and managing configuration drift without breaking production |
+| Modular Design | Reusable, scalable Terraform module architecture |
+| Multi-Environment Strategy | Dev / Stage / Prod setup using workspaces and variable separation |
+| Production Change Safety | Applying Terraform changes with minimal risk and zero downtime focus |
+| CI/CD Integration | Terraform automation using Azure DevOps and GitHub Actions |
+| Azure Networking | VNets, subnets, NSGs, and production-ready network design |
+| Identity & Access Management | Azure AD / Entra ID, RBAC, and managed identities |
+| Security & Governance | Resource locking, tagging strategy, and policy-aligned deployments |
+| Infrastructure Lifecycle | Managing creation, updates, and safe destruction controls |
+
 
 ---
 
