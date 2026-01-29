@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "rg" {
-  name = "AKS"
   location = "centralindia"
+  name     = "import-demo"
 }

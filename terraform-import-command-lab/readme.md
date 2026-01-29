@@ -11,7 +11,7 @@ This is a real-world scenario commonly asked in DevOps / Cloud interviews.
 |--------------|---------------|
 | Resource Group | AKS |
 | Azure Container Registry (ACR) | acrdemo2101 |
-| Virtual Network (VNet) | vnet-aks |
+| Virtual Network (VNet) | vnet-aks | Subent-01 | Subnet-02
 
 
 ⚠️ Important:
