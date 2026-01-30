@@ -9,9 +9,9 @@ This is a real-world scenario commonly asked in DevOps / Cloud interviews.
 
 | Resource Type | Resource Name |
 |--------------|---------------|
-| Resource Group | AKS |
+| Resource Group | rg-import-demo |
 | Azure Container Registry (ACR) | acrdemo2101 |
-| Virtual Network (VNet) | vnet-aks | Subent-01 | Subnet-02
+| Virtual Network (VNet) | vnet-aks | Subent-01 
 
 
 ⚠️ Important:

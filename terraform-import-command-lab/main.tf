@@ -15,4 +15,7 @@ provider "azurerm" {
   tenant_id       = "b3e33edc-ced7-433a-9f35-93df9317d7a4"
 }
 
-
+import {
+  to = azurerm_resource_group.rg
+  id = "/subscriptions/a96db7f9-f077-48d6-9d2e-68075185bc77/resourceGroups/import-demo"
+}
