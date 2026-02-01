@@ -49,6 +49,7 @@ By the end of this lab, you will be able to:
 - Azure subscription
 - Azure CLI authenticated  
 - Terraform v1.3 or later
+- Set env vars so that the service principal is used for authentication
 
 Existing Azure resources:
 - Resource Group: RG-Prod

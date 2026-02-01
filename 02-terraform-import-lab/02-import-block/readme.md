@@ -40,6 +40,7 @@ By the end of this lab, you will be able to:
 ## 🛠️ Prerequisites
 - Terraform **v1.5 or later**
 - Azure CLI authenticated  
+- Set env vars so that the service principal is used for authentication
  
  Existing Azure resources:
 - Resource Group: RG-Prod
