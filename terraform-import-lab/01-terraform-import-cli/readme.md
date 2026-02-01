@@ -56,7 +56,7 @@ Existing Azure resources:
 
 ## 🚦 Step-by-Step Instructions
 
-Step 1 — Create Terraform Configuration
+Step 1 : Create Terraform Configuration
 
 Create a file named main.tf:
 
@@ -78,13 +78,13 @@ resource "azurerm_virtual_network" "vnet" {
 
 ⚠️ The configuration must exactly match the existing resource.
 
-Step 2 — Initialize Terraform
+Step 2 : Initialize Terraform
 
 ## Make sure to update the details for your Azure Service Principal in main.tf
 
 terraform init
 
-Step 3 — Import the Existing Resource
+Step 3 : Import the Existing Resource
 
 Run the import command (1st import RG and validate and repeat the same steps for importing Vnet):
 
@@ -106,7 +106,7 @@ This command:
 Updates Terraform state
 Does not create or delete any infrastructure
 
-Step 4 — Validate with Terraform Plan
+Step 4 : Validate with Terraform Plan
 terraform plan
 
 
