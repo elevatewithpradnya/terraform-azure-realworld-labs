@@ -1,5 +1,3 @@
-# 🚀 Terraform Azure Real-World Labs
-
 # 🚀 Terraform Labs for Real-World Azure Infrastructure
 
 <p align="center">
