@@ -1,45 +1,119 @@
-🎯 Scenario
+# 🧪 Lab 1 | Terraform Import (CLI)
 
-An Azure Resource Group was created manually using the Azure Portal.
-Terraform is introduced later to manage it.
+## 🎯 Objective
 
-Recreating is not allowed (production).
+This lab covers:
+- Importing a **Resource Group**
+- Importing a **dependent Virtual Network**
+- Understanding **import order and dependencies**
+---
 
-🎯 Goal
+## 🧠 Why This Lab Matters
+Real-world Azure environments already exist before Terraform is introduced.
 
-Bring the existing resource under Terraform control
+Interviewers expect you to:
+- Import resources in the **correct order**
+- Understand **dependencies**
+- Avoid destructive changes in production
 
-Avoid downtime
+This lab simulates a **real enterprise brownfield scenario**.
 
-Understand what terraform import really does
+---
 
-🛠️ Prerequisites
+## 📘 Scenario
+- An Azure **Resource Group** and **Virtual Network** were created manually
+- Terraform is introduced later
+- Infrastructure is **live in production**
+- Recreating resources is **not allowed**
 
-Azure CLI logged in
+Your task is to **bring both resources under Terraform management safely**.
 
-Terraform ≥ 1.3
+---
 
-Existing Azure Resource Group (e.g. prod-rg)
+## 🎯 Outcome
+By the end of this lab, you will be able to:
+- Import an Azure Resource Group into Terraform state
+- Import a Virtual Network that depends on the Resource Group
+- Validate zero infrastructure changes
+- Explain dependency-aware imports in interviews
 
-🚦 Steps
-Step 1 — Create minimal Terraform config
+---
+
+## 🛠️ Prerequisites
+- Azure subscription
+- Azure CLI authenticated  
+- Terraform v1.3 or later
+
+Existing Azure resources:
+- Resource Group: RG-Prod
+- Virtual Network: Vnet-Prod
+
+## 🚦 Step-by-Step Instructions
+
+Step 1 — Create Terraform Configuration
+
+Create a file named main.tf:
+
 provider "azurerm" {
   features {}
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "prod-rg"
-  location = "eastus"
+  name     = "rg-prod"
+  location = "centralindia"
 }
 
-Step 2 — Import resource into state
-terraform import azurerm_resource_group.rg \
-/subscriptions/<sub-id>/resourceGroups/prod-rg
+resource "azurerm_virtual_network" "vnet" {
+  name                = "vnet-prod"
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+}
 
-Step 3 — Validate
+⚠️ The configuration must exactly match the existing resource.
+
+Step 2 — Initialize Terraform
+
+terraform init
+
+Step 3 — Import the Existing Resource
+
+Run the import command (1st import RG and validate and repeat the same steps for importing Vnet):
+
+Check Resource ID : 
+Open Azure Portal -->Navigate to the resource (RG or VNet) --> Go to Properties -->Copy Resource ID
+
+terraform import azurerm_resource_group.rg /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/prod-rg
+
+
+<img width="1787" height="257" alt="image" src="https://github.com/user-attachments/assets/d93f7a82-2e8a-4eb4-a8b2-f7ae28329cae" />
+
+This command:
+
+Updates Terraform state
+Does not create or delete any infrastructure
+
+Step 4 — Validate with Terraform Plan
 terraform plan
 
-
-Expected result:
-
+Expected output:
 No changes. Infrastructure is up-to-date.
+<img width="1463" height="143" alt="image" src="https://github.com/user-attachments/assets/e041ebc3-9625-4c16-b0ea-caa562529284" />
+
+
+This confirms:
+
+Terraform state matches Azure
+The import was successful
+No destructive changes will occur
+
+❌ What terraform import Does NOT Do
+
+Does not generate .tf files
+Does not fix configuration mismatches
+Does not import dependent resources automatically
+Configuration accuracy remains your responsibility.
+
+<img width="2000" height="600" alt="image" src="https://github.com/user-attachments/assets/748464c7-edf6-44a5-82ef-982407a49ee4" />
+
+
