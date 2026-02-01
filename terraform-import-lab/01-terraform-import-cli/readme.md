@@ -18,7 +18,7 @@ Interviewers expect you to:
 - Avoid destructive changes in production
 
 This lab simulates a **real enterprise brownfield scenario**.
-=======
+
 # 🧪 Lab 1 — Terraform Import (CLI)
 
 ## 🎯 Objective
@@ -37,7 +37,6 @@ Interviewers expect you to understand:
 - When to use `terraform import`
 - What it does and does *not* do
 - How to avoid destructive changes in production
->>>>>>> 8df3a906411b28f130d01e276c76d4a618672ce9
 
 ---
 
@@ -64,10 +63,6 @@ By the end of this lab, you will be able to:
 - Import a Virtual Network that depends on the Resource Group
 - Validate zero infrastructure changes
 - Explain dependency-aware imports in interviews
-
-- Import an existing Azure resource into Terraform state
-- Validate that no infrastructure changes occur
-- Explain this workflow clearly in interviews
 
 ---
 
@@ -142,7 +137,7 @@ No changes. Infrastructure is up-to-date.
 Expected output:
 No changes. Infrastructure is up-to-date.
 
-
+![alt text](image.png)
 
 This confirms:
 
@@ -150,12 +145,6 @@ Terraform state matches Azure
 The import was successful
 No destructive changes will occur
 
-❌ What terraform import Does NOT Do
-
-Does not generate .tf files
-Does not fix configuration mismatches
-Does not import dependent resources automatically
-Configuration accuracy remains your responsibility.
 
 <img width="2000" height="600" alt="image" src="https://github.com/user-attachments/assets/748464c7-edf6-44a5-82ef-982407a49ee4" />
 
