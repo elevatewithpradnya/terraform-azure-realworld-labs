@@ -22,24 +22,31 @@ This repository contains **real-world Terraform labs and projects** focused on
 
 > Follow this order to understand **Terraform the way it’s used in real production environments**.
 
-## 🧱 Terraform Hands-On Projects (Enterprise / EU-Ready)
+## 🧱 Foundation Projects (Enterprise Terraform Readiness)
 
-> Interview-ready Terraform projects focused on **production Azure environments**, **brownfield adoption**, and **enterprise best practices**.
+> These projects prove you understand **Terraform fundamentals the way enterprises expect** — safe state handling, brownfield adoption, security, and automation.
 
-| # | Project | Description (Interview-Ready Framing) | GitHub Repo / Folder | LinkedIn Post URL |
-|---:|--------|----------------------------------------|----------------------|------------------|
-| 01 | **Terraform Import (Brownfield Foundation)** | Safely adopt existing Azure resources into Terraform using `terraform import`, Import Blocks, `-refresh-only`, drift checks, and `generate-config-out` without downtime | `01-terraform-import-lab` | _Add link_ |
-| 02 | **aztfexport (Large Azure Estates)** | Export large legacy Azure environments and refactor auto-generated Terraform code into clean, modular IaC | `02-aztfexport` | _Add link_ |
-| 03 | **IaC Security with tfsec** | Detect Terraform security misconfigurations, enforce security gates in CI, and implement shift-left security | `03-tfsec-iac-security` | _Add link_ |
-| 04 | **Multi-Environment Azure (Dev / Stage / Prod)** | Design isolated multi-environment Azure infrastructure using Terraform with separate state, naming conventions, and approvals | `04-multi-environment-azure` | _Add link_ |
-| 05 | **Brownfield Azure Infrastructure Adoption** | Introduce Terraform into an existing Azure setup without downtime, recreations, or IP changes | `05-brownfield-azure-infra` | _Add link_ |
-| 06 | **Drift Detection & Governance** | Detect, analyze, and control infrastructure drift using scheduled `terraform plan`, lifecycle rules, and policy enforcement | `06-drift-detection-governance` | _Add link_ |
-| 07 | **Terraform Remote State & Locking (Azure)** | Implement remote backend using Azure Blob Storage with state locking, RBAC, versioning, and recovery scenarios | `07-remote-state-locking` | _Add link_ |
-| 08 | **Terraform CI/CD Pipeline (Azure DevOps / GitHub Actions)** | Build enterprise-grade pipelines with `fmt`, `validate`, `plan`, security scans, approvals, and controlled `apply` | `08-terraform-ci-cd` | _Add link_ |
-| 09 | **Azure Identity & RBAC as Code** | Automate Azure AD groups, custom RBAC roles, and role assignments following least-privilege principles | `09-azure-rbac-iac` | _Add link_ |
-| 10 | **Terraform Modules & Reusability** | Design reusable Terraform modules (VNet, VM, Storage, Key Vault) with versioning and clean interfaces | `10-terraform-modules` | _Add link_ |
-| 11 | **Azure Landing Zone (Mini Enterprise Setup)** | Build a lightweight Azure Landing Zone with management groups, policies, logging, and secure defaults | `11-azure-landing-zone` | _Add link_ |
-| 12 | **Provider Versioning & Upgrade Strategy** | Demonstrate safe provider version pinning, upgrades, and breaking-change handling in Terraform | `12-provider-versioning` | _Add link_ |
+| Order | Foundation Project | What It Proves (Interview Framing) | GitHub Repo / Folder | LinkedIn Post URL |
+|---:|----------------------|-----------------------------------|----------------------|------------------|
+| 01 | **Terraform Remote State & Locking (Azure)** | Safe collaboration, state protection, remote backend design, locking, and recovery scenarios | `01-remote-state-locking` | _Add link_ |
+| 02 | **Terraform Import (Brownfield Foundation)** | Safe adoption of existing Azure resources using `terraform import`, Import Blocks, `-refresh-only`, and `generate-config-out` | `02-terraform-import-lab` | _Add link_ |
+| 03 | **aztfexport (Large Azure Estates)** | Ability to handle large, legacy Azure environments and refactor auto-generated Terraform into maintainable IaC | `03-aztfexport` | _Add link_ |
+| 04 | **Provider Versioning & Upgrade Strategy** | Stability, backward compatibility, provider pinning, and controlled upgrade handling | `04-provider-versioning` | _Add link_ |
+| 05 | **IaC Security with tfsec** | Shift-left security mindset, policy awareness, and enforcing secure Terraform defaults | `05-tfsec-iac-security` | _Add link_ |
+| 06 | **Terraform CI/CD Fundamentals** | Non-interactive Terraform execution, approval gates, automation patterns, and pipeline safety | `06-terraform-ci-cd` | _Add link_ |
+
+## 🧱 Mini Platform Projects (Enterprise Azure Terraform)
+
+> These projects demonstrate **end-to-end Terraform maturity** — from environment design to governance and platform-level thinking.
+
+| Order | Project | What It Proves (Interview Framing) | GitHub Repo / Folder | LinkedIn Post URL |
+|---:|-------------------------------|-----------------------------------|----------------------|------------------|
+| 07 | **Multi-Environment Azure (Dev / Stage / Prod)** | Environment isolation, state separation, promotion strategies, and controlled releases | `07-multi-environment-azure` | _Add link_ |
+| 08 | **Brownfield Azure Infrastructure Adoption** | Introducing Terraform into live Azure environments without downtime, recreation, or IP changes | `08-brownfield-azure-infra` | _Add link_ |
+| 09 | **Drift Detection & Governance** | Detecting portal changes, enforcing standards at scale, and maintaining IaC integrity | `09-drift-detection-governance` | _Add link_ |
+| 10 | **Azure Identity & RBAC as Code** | Least-privilege access design, automated role assignments, and secure identity boundaries | `10-azure-rbac-iac` | _Add link_ |
+| 11 | **Terraform Modules & Reusability** | Clean architecture, DRY principles, module versioning, and scalable IaC design | `11-terraform-modules` | _Add link_ |
+| 12 | **Azure Landing Zone (Mini Enterprise Setup)** | Governance, compliance, platform thinking, and secure Azure foundation design | `12-azure-landing-zone` | _Add link_ |
 
 
 ## 💬 How to Use This Repo
