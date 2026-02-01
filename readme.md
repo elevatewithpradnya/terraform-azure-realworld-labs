@@ -1,5 +1,8 @@
 # 🚀 Terraform Azure Real-World Labs
-**Interview-ready | Production-focused | Brownfield first**
+
+# 🚀 Interview-Ready • Production-Proven • Brownfield-First Terraform Labs
+Terraform labs for real-world Azure infrastructure, safe adoption, and interviews.
+
 
 This repository contains **real-world Terraform labs and projects** focused on
 **Azure**, **brownfield infrastructure**, and **enterprise workflows**.
