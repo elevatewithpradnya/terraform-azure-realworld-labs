@@ -80,6 +80,8 @@ resource "azurerm_virtual_network" "vnet" {
 
 Step 2 — Initialize Terraform
 
+## Make sure to update the details for your Azure Service Principal in main.tf
+
 terraform init
 
 Step 3 — Import the Existing Resource
