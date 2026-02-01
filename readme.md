@@ -22,14 +22,25 @@ This repository contains **real-world Terraform labs and projects** focused on
 
 > Follow this order to understand **Terraform the way it’s used in real production environments**.
 
-| Order | Folder / Lab | What You’ll Learn | LinkedIn Post URL | GitHub Path |
-|------:|-------------|------------------|------------------|-------------|
-| 01 | **Terraform Import (Brownfield Foundation)** | Safely adopt existing Azure resources into Terraform (CLI import, Import Blocks, drift detection, generate-config-out) | _Add link_ | [`01-terraform-import-lab`](./01-terraform-import-lab) |
-| 02 | **aztfexport (Large Azure Estates)** | Export large legacy Azure environments and refactor generated Terraform code | _Add link_ | [`02-aztfexport`](./02-aztfexport) |
-| 03 | **IaC Security with tfsec** | Detect Terraform security misconfigurations and shift security left | _Add link_ | [`03-tfsec (IaC Security)`](./03-tfsec%20(IaC%20Security)) |
-| 04 | **Project 1 – Multi-Environment Azure** | Design Dev / Stage / Prod using Terraform with proper isolation | _Add link_ | [`04-Project 1 - Multi-Environment Azure`](./04-Project%201%20-%20Multi-Environment%20Azure) |
-| 05 | **Project 2 – Brownfield Azure Infrastructure** | Introduce Terraform into an existing Azure setup without downtime | _Add link_ | [`05-Project 2 - Brownfield Azure Infrastructure`](./05-Project%202%20-%20Brownfield%20Azure%20Infrastructure) |
-| 06 | **Project 3 – Drift Detection & Governance** | Detect, analyze, and control infrastructure drift at scale | _Add link_ | [`06-Project 3 - Drift Detection & Governance`](./06-Project%203%20-%20Drift%20Detection%20&%20Governance) |
+## 🧱 Terraform Hands-On Projects (Enterprise / EU-Ready)
+
+> Interview-ready Terraform projects focused on **production Azure environments**, **brownfield adoption**, and **enterprise best practices**.
+
+| # | Project | Description (Interview-Ready Framing) | GitHub Repo / Folder | LinkedIn Post URL |
+|---:|--------|----------------------------------------|----------------------|------------------|
+| 01 | **Terraform Import (Brownfield Foundation)** | Safely adopt existing Azure resources into Terraform using `terraform import`, Import Blocks, `-refresh-only`, drift checks, and `generate-config-out` without downtime | `01-terraform-import-lab` | _Add link_ |
+| 02 | **aztfexport (Large Azure Estates)** | Export large legacy Azure environments and refactor auto-generated Terraform code into clean, modular IaC | `02-aztfexport` | _Add link_ |
+| 03 | **IaC Security with tfsec** | Detect Terraform security misconfigurations, enforce security gates in CI, and implement shift-left security | `03-tfsec-iac-security` | _Add link_ |
+| 04 | **Multi-Environment Azure (Dev / Stage / Prod)** | Design isolated multi-environment Azure infrastructure using Terraform with separate state, naming conventions, and approvals | `04-multi-environment-azure` | _Add link_ |
+| 05 | **Brownfield Azure Infrastructure Adoption** | Introduce Terraform into an existing Azure setup without downtime, recreations, or IP changes | `05-brownfield-azure-infra` | _Add link_ |
+| 06 | **Drift Detection & Governance** | Detect, analyze, and control infrastructure drift using scheduled `terraform plan`, lifecycle rules, and policy enforcement | `06-drift-detection-governance` | _Add link_ |
+| 07 | **Terraform Remote State & Locking (Azure)** | Implement remote backend using Azure Blob Storage with state locking, RBAC, versioning, and recovery scenarios | `07-remote-state-locking` | _Add link_ |
+| 08 | **Terraform CI/CD Pipeline (Azure DevOps / GitHub Actions)** | Build enterprise-grade pipelines with `fmt`, `validate`, `plan`, security scans, approvals, and controlled `apply` | `08-terraform-ci-cd` | _Add link_ |
+| 09 | **Azure Identity & RBAC as Code** | Automate Azure AD groups, custom RBAC roles, and role assignments following least-privilege principles | `09-azure-rbac-iac` | _Add link_ |
+| 10 | **Terraform Modules & Reusability** | Design reusable Terraform modules (VNet, VM, Storage, Key Vault) with versioning and clean interfaces | `10-terraform-modules` | _Add link_ |
+| 11 | **Azure Landing Zone (Mini Enterprise Setup)** | Build a lightweight Azure Landing Zone with management groups, policies, logging, and secure defaults | `11-azure-landing-zone` | _Add link_ |
+| 12 | **Provider Versioning & Upgrade Strategy** | Demonstrate safe provider version pinning, upgrades, and breaking-change handling in Terraform | `12-provider-versioning` | _Add link_ |
+
 
 ## 💬 How to Use This Repo
 - Follow labs **in order**
