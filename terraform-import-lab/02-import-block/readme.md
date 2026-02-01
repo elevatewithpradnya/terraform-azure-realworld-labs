@@ -1,4 +1,4 @@
-# 🧪 Lab 2 — Terraform Import Block (Declarative Import)
+# 🧪 Lab 2 | Terraform Import Block (Declarative Import)
 
 ## 🎯 Objective
 Learn how to import existing Azure resources into Terraform using **Import Blocks**
@@ -99,12 +99,12 @@ No resources are imported yet
 
 Expected output includes lines like:
 
-![alt text](image.png)
+<img width="535" height="42" alt="image" src="https://github.com/user-attachments/assets/479cabcf-037b-4a63-817a-91855fcd3f48" />
 
 Step 4 : Apply Import Blocks
 terraform apply
 
-![alt text](image-1.png)
+<img width="721" height="42" alt="image" src="https://github.com/user-attachments/assets/a62a3b6b-6540-4104-909b-d4edc38dbd86" />
 
 Expected behavior:
 
@@ -115,7 +115,8 @@ Import is fully traceable in Git
 Step 5 : Validate
 terraform plan
 
-![alt text](image-2.png)
+<img width="1472" height="183" alt="image" src="https://github.com/user-attachments/assets/d397070d-822d-4372-9773-f49b72ab967b" />
+
 
 Expected output:
 
