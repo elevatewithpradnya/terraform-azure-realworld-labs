@@ -1,3 +1,4 @@
+
 # 🧪 Lab 1 | Terraform Import (CLI)
 
 ## 🎯 Objective
@@ -17,6 +18,26 @@ Interviewers expect you to:
 - Avoid destructive changes in production
 
 This lab simulates a **real enterprise brownfield scenario**.
+=======
+# 🧪 Lab 1 — Terraform Import (CLI)
+
+## 🎯 Objective
+Learn how to **safely adopt existing Azure infrastructure** into Terraform using the
+`terraform import` command **without downtime**.
+
+This lab focuses on **brownfield environments**, not greenfield demos.
+
+---
+
+## 🧠 Why This Lab Matters
+Most Terraform tutorials teach how to **create** infrastructure.
+Real-world projects require you to **manage infrastructure that already exists**.
+
+Interviewers expect you to understand:
+- When to use `terraform import`
+- What it does and does *not* do
+- How to avoid destructive changes in production
+>>>>>>> 8df3a906411b28f130d01e276c76d4a618672ce9
 
 ---
 
@@ -28,6 +49,13 @@ This lab simulates a **real enterprise brownfield scenario**.
 
 Your task is to **bring both resources under Terraform management safely**.
 
+- An Azure Resource Group was created manually via the Azure Portal
+- Terraform was introduced later
+- The resource is live in production
+- Recreating the resource is not allowed
+
+Your task is to **bring the existing resource under Terraform management safely**.
+
 ---
 
 ## 🎯 Outcome
@@ -36,6 +64,10 @@ By the end of this lab, you will be able to:
 - Import a Virtual Network that depends on the Resource Group
 - Validate zero infrastructure changes
 - Explain dependency-aware imports in interviews
+
+- Import an existing Azure resource into Terraform state
+- Validate that no infrastructure changes occur
+- Explain this workflow clearly in interviews
 
 ---
 
@@ -88,6 +120,11 @@ terraform import azurerm_resource_group.rg /subscriptions/<SUBSCRIPTION_ID>/reso
 
 <img width="1787" height="257" alt="image" src="https://github.com/user-attachments/assets/d93f7a82-2e8a-4eb4-a8b2-f7ae28329cae" />
 
+Run the import command:
+
+terraform import azurerm_resource_group.rg \
+/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/prod-rg
+
 This command:
 
 Updates Terraform state
@@ -96,9 +133,15 @@ Does not create or delete any infrastructure
 Step 4 — Validate with Terraform Plan
 terraform plan
 
+
 Expected output:
 No changes. Infrastructure is up-to-date.
 <img width="1463" height="143" alt="image" src="https://github.com/user-attachments/assets/e041ebc3-9625-4c16-b0ea-caa562529284" />
+
+
+Expected output:
+No changes. Infrastructure is up-to-date.
+
 
 
 This confirms:
