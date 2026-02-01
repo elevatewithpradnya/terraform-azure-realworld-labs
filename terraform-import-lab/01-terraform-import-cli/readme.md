@@ -121,6 +121,13 @@ The import was successful
 No destructive changes will occur
 
 
+⭐ If You Found This Helpful
+
+If this lab helped you understand Terraform Import in real production scenarios:
+
+⭐ Star this repository to save it for future reference
+👤 Follow me on GitHub for more real-world Terraform & Azure labs
+
 <img width="2000" height="600" alt="image" src="https://github.com/user-attachments/assets/748464c7-edf6-44a5-82ef-982407a49ee4" />
 
 
