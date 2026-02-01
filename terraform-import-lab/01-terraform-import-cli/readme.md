@@ -43,7 +43,9 @@ By the end of this lab, you will be able to:
   ```bash
   az login
 
-  🚦 Step-by-Step Instructions
+
+## 🚦 Step-by-Step Instructions
+
 Step 1 — Create Terraform Configuration
 
 Create a file named main.tf:
@@ -61,6 +63,7 @@ resource "azurerm_resource_group" "rg" {
 ⚠️ The configuration must exactly match the existing resource.
 
 Step 2 — Initialize Terraform
+
 terraform init
 
 Step 3 — Import the Existing Resource
@@ -74,7 +77,6 @@ terraform import azurerm_resource_group.rg \
 This command:
 
 Updates Terraform state
-
 Does not create or delete any infrastructure
 
 Step 4 — Validate with Terraform Plan
@@ -82,24 +84,18 @@ terraform plan
 
 
 Expected output:
-
 No changes. Infrastructure is up-to-date.
 
 
 This confirms:
 
 Terraform state matches Azure
-
 The import was successful
-
 No destructive changes will occur
 
 ❌ What terraform import Does NOT Do
 
 Does not generate .tf files
-
 Does not fix configuration mismatches
-
 Does not import dependent resources automatically
-
 Configuration accuracy remains your responsibility.
