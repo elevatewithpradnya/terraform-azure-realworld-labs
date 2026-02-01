@@ -1,7 +1,13 @@
 # 🚀 Terraform Azure Real-World Labs
 
-# 🚀 Interview-Ready • Production-Proven • Brownfield-First Terraform Labs
-Terraform labs for real-world Azure infrastructure, safe adoption, and interviews.
+# 🚀 Terraform Labs for Real-World Azure Infrastructure
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Interview--Ready-✔️-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Production--Proven-Enterprise-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Brownfield--First-Real--World-orange?style=for-the-badge" />
+</p>
+
 
 
 This repository contains **real-world Terraform labs and projects** focused on
