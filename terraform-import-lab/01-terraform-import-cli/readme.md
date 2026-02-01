@@ -19,27 +19,6 @@ Interviewers expect you to:
 
 This lab simulates a **real enterprise brownfield scenario**.
 
-# 🧪 Lab 1 — Terraform Import (CLI)
-
-## 🎯 Objective
-Learn how to **safely adopt existing Azure infrastructure** into Terraform using the
-`terraform import` command **without downtime**.
-
-This lab focuses on **brownfield environments**, not greenfield demos.
-
----
-
-## 🧠 Why This Lab Matters
-Most Terraform tutorials teach how to **create** infrastructure.
-Real-world projects require you to **manage infrastructure that already exists**.
-
-Interviewers expect you to understand:
-- When to use `terraform import`
-- What it does and does *not* do
-- How to avoid destructive changes in production
-
----
-
 ## 📘 Scenario
 - An Azure **Resource Group** and **Virtual Network** were created manually
 - Terraform is introduced later
@@ -132,12 +111,6 @@ terraform plan
 Expected output:
 No changes. Infrastructure is up-to-date.
 <img width="1463" height="143" alt="image" src="https://github.com/user-attachments/assets/e041ebc3-9625-4c16-b0ea-caa562529284" />
-
-
-Expected output:
-No changes. Infrastructure is up-to-date.
-
-![alt text](image.png)
 
 This confirms:
 
