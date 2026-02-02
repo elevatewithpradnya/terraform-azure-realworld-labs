@@ -97,7 +97,8 @@ to the remote backend.
 ```bash
 terraform init -reconfigure
 
-🔍 Step 5: Validate State Integrity (Read-Only)
+
+### 🔍 Step 5: Validate State Integrity (Read-Only)
 
 Before allowing any changes, validate that Terraform and Azure are aligned.
 
@@ -106,15 +107,15 @@ terraform plan
 ---
 ## 🔐 Step 6: Harden the Backend (Prevent Recurrence)
 
-After restoring Terraform state, harden the backend to ensure
+After restoring Terraform state, harden the backend to ensure  
 **accidental deletion, corruption, or unauthorized modification cannot happen again**.
 
 | 🛡️ Protection Area | ⚙️ Configuration | 🎯 Why It Matters (Interview Angle) |
-|-------------------|-----------------|-------------------------------------|
-| **Blob Versioning** | Enable **Blob versioning** on the Azure Storage account | Allows rollback to previous state versions if the state is overwritten or corrupted |
-| **Blob Soft Delete** | Enable **Soft delete for blobs** with 7–30 days retention | Enables recovery of deleted state caused by human error |
-| **RBAC (Least Privilege)** | Humans: `Reader`<br>CI/CD: `Storage Blob Data Contributor` | Prevents unauthorized state modification or deletion |
+|-------------------|------------------|-------------------------------------|
+| **Blob Versioning** | Enable **Blob versioning** on the Azure Storage account | Allows rollback to previous state versions if overwritten or corrupted |
+| **Blob Soft Delete** | Enable **Soft delete for blobs** with **7–30 days retention** | Enables recovery of deleted state caused by human error |
+| **RBAC (Least Privilege)** | Humans: `Reader` <br> CI/CD: `Storage Blob Data Contributor` | Prevents unauthorized state modification or deletion |
 | **Resource Locks** | Apply **CanNotDelete** lock on the storage account or resource group | Blocks accidental deletion of the Terraform backend |
-| **CI/CD-Only Writes** | Allow Terraform `apply` only from pipelines | Ensures controlled, auditable state changes |
+| **CI/CD-Only Writes** | Allow Terraform `apply` **only from pipelines** | Ensures controlled, auditable, and repeatable state changes |
 
 > ✅ This layered protection model ensures **recoverability, auditability, and production-grade safety**.
