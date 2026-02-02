@@ -89,41 +89,32 @@ If the blob was deleted:
 
 ---
 
-### Step 4: Reinitialize Terraform Backend
-Reconnect Terraform to the restored state:
+## 🔄 Step 4: Reinitialize Terraform Backend (Safe Operation)
+
+After restoring the Terraform state file, reinitialize Terraform to reconnect
+to the remote backend.
 
 ```bash
 terraform init -reconfigure
-This does not change infrastructure.
 
-Step 5: Validate State Integrity
+🔍 Step 5: Validate State Integrity (Read-Only)
 
-Run a read-only plan:
+Before allowing any changes, validate that Terraform and Azure are aligned.
 
 terraform plan
 
+---
+## 🔐 Step 6: Harden the Backend (Prevent Recurrence)
 
-Expected result:
+After restoring Terraform state, harden the backend to ensure
+**accidental deletion, corruption, or unauthorized modification cannot happen again**.
 
-✅ No changes (or known, expected drift)
-
-If Terraform proposes recreating resources:
-
-❌ Stop immediately
-
-Investigate state integrity
-
-### Step 6: Harden the Backend (Prevent Recurrence)
-
-After recovering the Terraform state, harden the backend to ensure
-**accidental deletion cannot happen again**.
-
-| Protection Area | Configuration | Why It Matters (Interview Angle) |
-|-----------------|--------------|----------------------------------|
-| **Blob Versioning** | Enable **Blob versioning** on the storage account | Allows rollback to previous state versions if overwritten or corrupted |
-| **Blob Soft Delete** | Enable **Soft delete for blobs** (7–30 days retention) | Recovers deleted state caused by human error |
+| 🛡️ Protection Area | ⚙️ Configuration | 🎯 Why It Matters (Interview Angle) |
+|-------------------|-----------------|-------------------------------------|
+| **Blob Versioning** | Enable **Blob versioning** on the Azure Storage account | Allows rollback to previous state versions if the state is overwritten or corrupted |
+| **Blob Soft Delete** | Enable **Soft delete for blobs** with 7–30 days retention | Enables recovery of deleted state caused by human error |
 | **RBAC (Least Privilege)** | Humans: `Reader`<br>CI/CD: `Storage Blob Data Contributor` | Prevents unauthorized state modification or deletion |
-| **Resource Locks** | Apply **CanNotDelete** lock on storage account or RG | Blocks accidental deletion of the Terraform backend |
-| **CI/CD-Only Writes** | Terraform `apply` runs only from pipelines | Ensures auditability and controlled state changes |
+| **Resource Locks** | Apply **CanNotDelete** lock on the storage account or resource group | Blocks accidental deletion of the Terraform backend |
+| **CI/CD-Only Writes** | Allow Terraform `apply` only from pipelines | Ensures controlled, auditable state changes |
 
-> ✅ This combination ensures **recoverability, auditability, and production safety**.
+> ✅ This layered protection model ensures **recoverability, auditability, and production-grade safety**.
