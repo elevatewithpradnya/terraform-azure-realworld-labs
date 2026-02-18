@@ -1,8 +1,8 @@
 resource "azurerm_virtual_machine" "spoke_vm" {
   name                  = "spoke-vm"
-  location              = azurerm_resource_group.hub_rg.location
-  resource_group_name   = azurerm_resource_group.hub_rg.name
-  network_interface_ids = [azurerm_network_interface.hub_nic.id]
+  location              = azurerm_resource_group.rg.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  network_interface_ids = [azurerm_network_interface.spoke_nic.id]
   vm_size               = "Standard_DS1_v2"
 
   storage_image_reference {
@@ -28,4 +28,17 @@ resource "azurerm_virtual_machine" "spoke_vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
+}
+
+resource "azurerm_network_interface" "spoke_nic" {
+  name                = "spoke-nic"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.spoke_subnet.id
+    private_ip_address_allocation = "Dynamic"
+  }
+  
 }
