@@ -10,3 +10,10 @@ variable "hub_admin_password" {
 }
 
 
+variable "rg_name" {
+  type = string
+}
+
+variable "location" {
+  type = string
+}

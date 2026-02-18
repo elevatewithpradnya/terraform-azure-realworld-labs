@@ -9,4 +9,10 @@ variable "spoke_admin_password" {
   sensitive   = true
 }
 
+variable "rg_name" {
+  type = string
+}
 
+variable "location" {
+  type = string
+}
