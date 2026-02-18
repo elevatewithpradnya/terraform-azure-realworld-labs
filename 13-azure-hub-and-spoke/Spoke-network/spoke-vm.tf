@@ -1,7 +1,7 @@
 resource "azurerm_virtual_machine" "spoke_vm" {
   name                  = "spoke-vm"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
+  location              = var.location
+  resource_group_name   = var.rg_name
   network_interface_ids = [azurerm_network_interface.spoke_nic.id]
   vm_size               = "Standard_DS1_v2"
 
