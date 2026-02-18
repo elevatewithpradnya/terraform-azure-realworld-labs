@@ -28,6 +28,7 @@ resource "azurerm_virtual_machine" "hub_vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
+  depends_on = [ azurerm_subnet.hub_subnet ]
 }
 resource "azurerm_network_interface" "hub_nic" {
   name                = "hub-nic"
@@ -39,5 +40,5 @@ resource "azurerm_network_interface" "hub_nic" {
     subnet_id                     = azurerm_subnet.hub_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
-  
+  depends_on = [ azurerm_subnet.hub_subnet ]
 }

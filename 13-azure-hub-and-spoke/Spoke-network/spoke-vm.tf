@@ -28,6 +28,7 @@ resource "azurerm_virtual_machine" "spoke_vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
+  depends_on = [ azurerm_subnet.spoke_subnet ]
 }
 
 resource "azurerm_network_interface" "spoke_nic" {
@@ -40,5 +41,6 @@ resource "azurerm_network_interface" "spoke_nic" {
     subnet_id                     = azurerm_subnet.spoke_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
+  depends_on = [ azurerm_subnet.spoke_subnet ]
    
 }
