@@ -1,8 +1,8 @@
-spoke_admin_username="azureuser"
-spoke_admin_password="Azure12345678"
+spoke_admin_username = "azureuser"
+spoke_admin_password = "Azure12345678"
 
-hub_admin_username="azureuser"
-hub_admin_password="Azure12345678"
+hub_admin_username = "azureuser"
+hub_admin_password = "Azure12345678"
 
-rg_name="rg-hub-spoke"
-location="Centralindia"
+rg_name  = "rg-hub-spoke"
+location = "Centralindia"
