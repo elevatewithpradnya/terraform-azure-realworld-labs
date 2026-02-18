@@ -1,2 +1,2 @@
-admin_user="azureuser"
-admin_password="Azure12345678"
+spoke_admin_username="azureuser"
+spoke_admin_password="Azure12345678"
