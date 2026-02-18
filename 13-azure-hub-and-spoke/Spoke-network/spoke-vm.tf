@@ -32,8 +32,8 @@ resource "azurerm_virtual_machine" "spoke_vm" {
 
 resource "azurerm_network_interface" "spoke_nic" {
   name                = "spoke-nic"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = var.location
+  resource_group_name = var.rg_name
 
   ip_configuration {
     name                          = "internal"
