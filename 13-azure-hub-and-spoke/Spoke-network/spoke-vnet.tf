@@ -3,7 +3,7 @@ resource "azurerm_virtual_network" "spoke_vnet" {
   location            = var.location
   resource_group_name = var.rg_name
   address_space       = ["10.1.0.0/16"]
-}
+  }
 
 resource "azurerm_subnet" "spoke_subnet" {
   name                 = "app-subnet"

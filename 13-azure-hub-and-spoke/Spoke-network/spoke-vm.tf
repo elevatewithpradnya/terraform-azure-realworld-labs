@@ -40,5 +40,5 @@ resource "azurerm_network_interface" "spoke_nic" {
     subnet_id                     = azurerm_subnet.spoke_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
-  
+   
 }
