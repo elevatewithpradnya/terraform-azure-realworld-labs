@@ -21,8 +21,8 @@ resource "azurerm_virtual_machine" "hub_vm" {
 
   os_profile {
     computer_name  = "hubvm"
-    admin_username = var.admin_username
-    admin_password = var.admin_password
+    admin_username = var.hub_admin_username
+    admin_password = var.hub_admin_password
   }
 
   os_profile_linux_config {

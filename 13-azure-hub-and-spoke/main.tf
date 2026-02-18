@@ -4,9 +4,11 @@ resource "azurerm_resource_group" "hub_rg" {
 }
 
 module "hub" {
-  source   = "./modules/hub-network"
+  source   = "./Hub-network"
   rg_name  = azurerm_resource_group.rg.name
-  location = var.location
+  admin_username = "azureuser"
+  admin_password = "Azure12345678"
+
 }
 
 module "spoke" {
