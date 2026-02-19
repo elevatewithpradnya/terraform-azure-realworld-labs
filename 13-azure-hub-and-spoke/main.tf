@@ -22,18 +22,20 @@ module "spoke" {
 resource "azurerm_virtual_network_peering" "hub-spoke-appvenet-peering" {
   name                         = "hub-to-spoke-appvnet"
   resource_group_name          = var.rg_name
-  virtual_network_name         = module.hub.hub-vnet-name
-  remote_virtual_network_id    = module.spoke.spoke-appvnet-id
+  virtual_network_name         = module.hub.hub_vnet_name
+  remote_virtual_network_id    = module.spoke.spoke_app_vnet_id
   allow_virtual_network_access = true
   depends_on                   = [module.hub, module.spoke]
 }
 
-resource "azurerm_virtual_network_peering" "hub-spoke-dbvenet-peering" {
-  name                         = "hub-to-spoke-dbvnet"
+
+resource "azurerm_virtual_network_peering" "spoke-appvnet-hub-peering" {
+  name                         = "spoke-appvnet-to-hub"
   resource_group_name          = var.rg_name
-  virtual_network_name         = module.hub.hub-vnet-name
-  remote_virtual_network_id    = module.spoke.spoke-dbvnet-id
+  virtual_network_name         = module.spoke.spoke_app_vnet_name
+  remote_virtual_network_id    = module.hub.hub_vnet_id
   allow_virtual_network_access = true
   depends_on                   = [module.hub, module.spoke]
+
 }
 

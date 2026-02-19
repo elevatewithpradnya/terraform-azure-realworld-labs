@@ -14,17 +14,3 @@ resource "azurerm_subnet" "appsubnet" {
 }
 
 
-resource "azurerm_virtual_network" "spoke_db_vnet" {
-  name                = "spoke_db_vnet"
-  location            = var.location
-  resource_group_name = var.rg_name
-  address_space       = ["10.2.0.0/16"]
-  }
-
-resource "azurerm_subnet" "dbsubnet" {
-  name                 = "db_subnet"
-  resource_group_name  = var.rg_name
-  virtual_network_name = azurerm_virtual_network.spoke_db_vnet.name
-  address_prefixes     = ["10.2.1.0/24"]
-  depends_on = [ azurerm_virtual_network.spoke_db_vnet ]
-}
