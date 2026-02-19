@@ -26,7 +26,7 @@ resource "azurerm_firewall" "firewall" {
   location            = var.location
   resource_group_name = var.rg_name
   sku_name = "AZFW_VNet"
-  sku_tier = "Basic"
+  sku_tier = "Standard"
 
   ip_configuration {
     name                 = "configuration"
