@@ -8,7 +8,7 @@ module "hub" {
   rg_name    = var.rg_name
   location   = var.location
   depends_on = [azurerm_resource_group.hub_rg]
-  
+
 }
 
 module "spoke" {
@@ -22,8 +22,8 @@ module "spoke" {
 resource "azurerm_virtual_network_peering" "hub-spoke-appvenet-peering" {
   name                         = "hub-to-spoke-appvnet"
   resource_group_name          = var.rg_name
-  virtual_network_name         = module.hub.hub_vnet_name
-  remote_virtual_network_id    = module.spoke.spoke_app_vnet_id
+  virtual_network_name         = module.hub.hub-vnet-name
+  remote_virtual_network_id    = module.spoke.spoke-appvnet-id
   allow_virtual_network_access = true
   depends_on                   = [module.hub, module.spoke]
 }
@@ -31,10 +31,9 @@ resource "azurerm_virtual_network_peering" "hub-spoke-appvenet-peering" {
 resource "azurerm_virtual_network_peering" "hub-spoke-dbvenet-peering" {
   name                         = "hub-to-spoke-dbvnet"
   resource_group_name          = var.rg_name
-  virtual_network_name         = module.hub.hub_vnet_name
-  remote_virtual_network_id    = module.spoke.spoke_db_vnet_id
+  virtual_network_name         = module.hub.hub-vnet-name
+  remote_virtual_network_id    = module.spoke.spoke-dbvnet-id
   allow_virtual_network_access = true
   depends_on                   = [module.hub, module.spoke]
-
 }
 
