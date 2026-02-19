@@ -1,9 +1,9 @@
-resource "azurerm_virtual_machine" "spoke_vm" {
-  name                  = "spoke-vm"
+resource "azurerm_virtual_machine" "app_vm" {
+  name                  = "app-vm"
   location              = var.location
   resource_group_name   = var.rg_name
   network_interface_ids = [azurerm_network_interface.spoke_nic.id]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_B1s"
 
   storage_image_reference {
     publisher = "Canonical"
@@ -13,14 +13,14 @@ resource "azurerm_virtual_machine" "spoke_vm" {
   }
 
   storage_os_disk {
-    name              = "spoke-os-disk"
+    name              = "app-os-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
 
   os_profile {
-    computer_name  = "spokevm"
+    computer_name  = "appvm"
     admin_username = var.spoke_admin_username
     admin_password = var.spoke_admin_password
   }
@@ -28,19 +28,19 @@ resource "azurerm_virtual_machine" "spoke_vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-  depends_on = [ azurerm_subnet.spoke_subnet ]
+  depends_on = [ azurerm_subnet.spoke_appsubnet ]
 }
 
-resource "azurerm_network_interface" "spoke_nic" {
-  name                = "spoke-nic"
+resource "azurerm_network_interface" "app_nic" {
+  name                = "app-nic"
   location            = var.location
   resource_group_name = var.rg_name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.spoke_subnet.id
+    subnet_id                     = azurerm_subnet.spoke_appsubnet.id
     private_ip_address_allocation = "Dynamic"
   }
-  depends_on = [ azurerm_subnet.spoke_subnet ]
+  depends_on = [ azurerm_subnet.spoke_appsubnet ]
    
 }
