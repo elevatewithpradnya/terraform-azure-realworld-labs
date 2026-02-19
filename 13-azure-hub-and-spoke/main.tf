@@ -17,6 +17,7 @@ module "spoke" {
   location             = var.location
   spoke_admin_username = var.spoke_admin_username
   spoke_admin_password = var.spoke_admin_password
+  depends_on = [ azurerm_resource_group.hub_rg ]
 }
 
 resource "azurerm_virtual_network_peering" "hub-spoke-appvenet-peering" {
