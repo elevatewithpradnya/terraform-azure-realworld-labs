@@ -2,7 +2,7 @@ resource "azurerm_virtual_machine" "app_vm" {
   name                  = "app-vm"
   location              = var.location
   resource_group_name   = var.rg_name
-  network_interface_ids = [azurerm_network_interface.spoke_nic.id]
+  network_interface_ids = [azurerm_network_interface.app_nic.id]
   vm_size               = "Standard_B1s"
 
   storage_image_reference {
@@ -28,7 +28,7 @@ resource "azurerm_virtual_machine" "app_vm" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-  depends_on = [ azurerm_subnet.spoke_appsubnet ]
+  depends_on = [azurerm_subnet.appsubnet]
 }
 
 resource "azurerm_network_interface" "app_nic" {
@@ -38,9 +38,9 @@ resource "azurerm_network_interface" "app_nic" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.spoke_appsubnet.id
+    subnet_id                     = azurerm_subnet.appsubnet.id
     private_ip_address_allocation = "Dynamic"
   }
-  depends_on = [ azurerm_subnet.spoke_appsubnet ]
+  depends_on = [ azurerm_subnet.appsubnet]
    
 }

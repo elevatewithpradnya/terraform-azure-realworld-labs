@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "spoke_app_vnet" {
 resource "azurerm_subnet" "appsubnet" {
   name                 = "app_subnet"
   resource_group_name  = var.rg_name
-  virtual_network_name = azurerm_virtual_network.spoke_vnet.name
+  virtual_network_name = azurerm_virtual_network.spoke_app_vnet.name
   address_prefixes     = ["10.1.1.0/24"]
   depends_on = [ azurerm_virtual_network.spoke_app_vnet ]
 }
