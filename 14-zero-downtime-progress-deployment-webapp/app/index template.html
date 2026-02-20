@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Zero Downtime Demo</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 80px;
+            background: #f4f6f8;
+        }
+        h1 { color: #0078D4; }
+        .info {
+            font-size: 22px;
+            margin: 15px;
+        }
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚀 Zero Downtime Deployment Demo</h1>
+
+<div class="info">
+    Slot Served Request:
+    <span class="highlight">$WEBSITE_SLOT_NAME</span>
+</div>
+
+<div class="info">
+    Hostname:
+    <span class="highlight">$WEBSITE_HOSTNAME</span>
+</div>
+
+<div class="info">
+    Container Version:
+    <span class="highlight">$APP_VERSION</span>
+</div>
+
+<div class="info">
+    Refresh page multiple times to observe traffic split.
+</div>
+
+</body>
+</html>

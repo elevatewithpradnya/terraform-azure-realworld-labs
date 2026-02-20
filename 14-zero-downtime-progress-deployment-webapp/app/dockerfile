@@ -1,0 +1,17 @@
+FROM nginx:alpine
+
+# Install envsubst (part of gettext)
+RUN apk add --no-cache gettext
+
+# Remove default nginx files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy template and startup script
+COPY index.template.html /usr/share/nginx/html/index.template.html
+COPY start.sh /start.sh
+
+RUN chmod +x /start.sh
+
+EXPOSE 80
+
+CMD ["/start.sh"]
