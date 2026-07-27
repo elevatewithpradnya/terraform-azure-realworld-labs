@@ -1,5 +1,5 @@
 variable "subscription_id" {
- type = string 
+  type = string
 }
 
 variable "client_id" {
