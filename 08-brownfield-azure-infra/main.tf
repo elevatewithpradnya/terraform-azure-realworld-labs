@@ -14,6 +14,7 @@ provider "azurerm" {
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
 }
+# __generated__ by Terraform
 
 resource "azurerm_resource_group" "rg" {
   location = "centralindia"
