@@ -20,20 +20,20 @@ module "resource_group" {
 }
 
 module "network" {
-  source = "./modules/network"
+  source              = "./modules/network"
   location            = var.location
   resource_group_name = var.resource_group_name
 }
 
 module "vm" {
-  source = "./modules/VM"
+  source              = "./modules/VM"
   location            = var.location
   resource_group_name = var.resource_group_name
 }
 
 module "keyvault" {
-  source = "./modules/keyvault"
-  kv_location            = var.kv_location  
+  source                 = "./modules/keyvault"
+  kv_location            = var.kv_location
   kv_resource_group_name = var.kv_resource_group_name
   tenant_id              = var.tenant_id
-  }
+}
