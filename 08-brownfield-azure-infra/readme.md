@@ -47,17 +47,17 @@ Terraform State
 Infrastructure as Code
 
 
-# Repository Structure
+## Repository Structure
 
-08-brownfield-azure-infra/
+📁 08-brownfield-azure-infra
 │
-├── main.tf
-├── variables.tf
-├── terraform.tfvars
-├── import.tf
-├── .gitignore
-├── generated.tf (Generated after terraform plan)
-└── README.md
+├── 📄 main.tf
+├── 📄 variables.tf
+├── 📄 terraform.tfvars
+├── 📄 import.tf
+├── 📄 .gitignore
+├── 📄 generated.tf
+└── 📄 README.md
 
 # Prerequisites
 
