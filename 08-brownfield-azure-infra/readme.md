@@ -49,15 +49,7 @@ Infrastructure as Code
 
 ## Repository Structure
 
-📁 08-brownfield-azure-infra
-│
-├── 📄 main.tf
-├── 📄 variables.tf
-├── 📄 terraform.tfvars
-├── 📄 import.tf
-├── 📄 .gitignore
-├── 📄 generated.tf
-└── 📄 README.md
+![alt text](image.png)
 
 # Prerequisites
 
