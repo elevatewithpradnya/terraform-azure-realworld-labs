@@ -13,3 +13,21 @@ variable "client_secret" {
 variable "tenant_id" {
   type = string
 }
+
+variable "location" {
+  type    = string
+
+}
+
+variable "resource_group_name" {
+  type    = string
+
+}
+
+variable "kv_location" {
+  type = string
+}
+
+variable "kv_resource_group_name" {
+  type = string
+}
