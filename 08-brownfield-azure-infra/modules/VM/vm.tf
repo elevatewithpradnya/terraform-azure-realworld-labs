@@ -39,4 +39,15 @@ resource "azurerm_virtual_machine" "vm" {
     write_accelerator_enabled = false
   }
 }
-
+resource "azurerm_network_interface" "nic" {
+  location            = var.location
+  name                = "vm-linux-01679"
+  resource_group_name = var.resource_group_name
+  ip_configuration {
+    name                          = "ipconfig1"
+    primary                       = true
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = "/subscriptions/a96db7f9-f077-48d6-9d2e-68075185bc77/resourceGroups/Vnet/providers/Microsoft.Network/publicIPAddresses/vm-linux-01-ip"
+    subnet_id                     = "/subscriptions/a96db7f9-f077-48d6-9d2e-68075185bc77/resourceGroups/Vnet/providers/Microsoft.Network/virtualNetworks/vnet-dev/subnets/subnet-dev-02"
+  }
+}
