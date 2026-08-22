@@ -39,7 +39,7 @@ Hands-on **Terraform + Azure** labs built around real production scenarios — b
 - Open the `readme.md` inside each lab folder before running any code
 - Run `terraform plan` before every `terraform apply`
 - Focus on **why** a step is done, not just the command
-- Update variables (subscription ID, resource names, etc.) to match your own Azure environment before applying
+- Update variables (subscription ID, resource names, tfvars, client Id etc.) to match your own Azure environment before applying
 
 ---
 
@@ -53,9 +53,5 @@ Hands-on **Terraform + Azure** labs built around real production scenarios — b
 
 ---
 
-## 🤝 Connect
-
-Content from this repo is shared as part of **#elevatewithpradnya** and **CareerByteCode** — Azure cloud education and interview prep.
-
-- **LinkedIn:** [linkedin.com/in/learnwithpradnya](https://www.linkedin.com/in/learnwithpradnya)
-- **GitHub:** [github.com/learnwithpradnya](https://github.com/learnwithpradnya)
+- **LinkedIn:** [linkedin.com/in/learnwithpradnya](https://www.linkedin.com/in/elevatewithpradnya)
+- **GitHub:** [github.com/learnwithpradnya](https://github.com/elevatewithpradnya)
